@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carcosita</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #fde3e3;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+        }
+        .gif-container {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        let yesSize = 18;
+        let noClickCount = 0;
+
+        function showResponse() {
+            document.body.innerHTML = `
+                <h1 style="color: red;">¡Sabía que dirías que sí!</h1>
+                <div class="gif-container">
+                    <img src="https://media.tenor.com/lnI645QIjMAAAAAj/gatitos-enamorados-besos-de-amor.gif" alt="Abrazo tierno" width="300px">
+                </div>
+            `;
+        }
+
+        function enlargeYes() {
+            yesSize += 10;
+            document.querySelector(".yes").style.fontSize = yesSize + "px";
+            document.querySelector(".yes").style.padding = (yesSize / 2) + "px";
+            noClickCount++;
+            
+            document.querySelector(".gif-container").innerHTML = `
+                <img src="https://media1.tenor.com/m/bzNF9vRFJEgAAAAC/bobinha.gif" alt="Gato triste" width="300px">
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>¿Serás mi 14 carcosita,?</h1>
+    <div class="buttons">
+        <button class="yes" onclick="showResponse()">Sí</button>
+        <button class="no" onclick="enlargeYes()">No</button>
+    </div>
+    <div class="gif-container">
+        <img src="https://media.tenor.com/lnI645QIjMAAAAAj/gatitos-enamorados-besos-de-amor.gif" alt="Gatito animado" width="200px">
+    </div>
+</body>
+</html>
